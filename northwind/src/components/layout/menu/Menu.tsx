@@ -3,7 +3,10 @@ import './Menu.css'
 function Menu(): JSX.Element {
     return (
         <div className='Menu'>
-            this is the menu
+            <a href="#">home</a>
+            <a href="#">products</a>
+            <a href="#">employees</a>
+            <a href="#">about us</a>
         </div>
     )
 }

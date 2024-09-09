@@ -1,6 +1,6 @@
+import Home from '../../home/home/Home';
 import Footer from '../footer/Footer';
 import Header from '../header/Header';
-import Main from '../main/Main';
 import Menu from '../menu/Menu';
 import './Layout.css'
 
@@ -16,7 +16,7 @@ function Layout(): JSX.Element {
             </nav>
 
             <main>
-                <Main />
+                <Home />
             </main>
 
             <footer>
