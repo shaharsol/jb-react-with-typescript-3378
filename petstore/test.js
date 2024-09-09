@@ -22,4 +22,34 @@ for(let i=0; i < employees.length; i++) {
     `
 }
 
-console.log(html)
+const reducedHTML = employees.reduce((cumm, curr) => {
+    return `${cumm}
+        <tr>
+            <td>${curr.id}</td>
+            <td>${curr.name}</td>
+            <td>${curr.gender}</td>
+        </tr>
+    `
+}, '')
+
+console.log(reducedHTML)
+
+
+const numbers = [1,2,3,4,5]
+
+const sum = numbers.reduce((cumm, curr) => {
+    return cumm + curr
+}, 0)
+
+const arr = [];
+
+arr.
+    map().
+    map().
+    filter().
+    reduce()
+
+console.log(sum)
+
+
+// console.log(html)

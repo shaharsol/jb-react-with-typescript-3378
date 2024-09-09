@@ -1,0 +1,14 @@
+.Fish {
+    display: inline-block;
+    border: 1px solid black;
+    margin: 20px;
+}
+
+.Fish h3 {
+    font-size: 16px;
+    color: blue;
+}
+
+.Fish img {
+    width: 100px;
+}

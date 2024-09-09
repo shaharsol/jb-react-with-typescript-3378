@@ -2,21 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Kitten from './components/animals/kitten/Kitten';
-import Fish from './components/animals/fish/Fish';
+import Layout from './components/layout/layout/Layout';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <p>hello world</p>
-    <Kitten />
-    <Kitten />
-    <Kitten />
-    <Fish />
-    <Fish />
-    
+    <Layout />
   </React.StrictMode>
 );
 
