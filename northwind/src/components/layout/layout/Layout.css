@@ -11,6 +11,7 @@
 
 .Layout > main {
     grid-column: span 5;
+    overflow: auto;
 }
 
 .Layout, .Layout > * {

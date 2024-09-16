@@ -3,6 +3,12 @@ import products1Source from '../../../assets/images/products1.jpeg'
 import products2Source from '../../../assets/images/products2.jpeg'
 import { useEffect, useState } from 'react'
 
+const animals = [
+    ['doberman', 'malinua', 'pitbull'], // dogs
+    ['siamese', 'persian', 'ally'] // cats
+]
+
+
 function Home(): JSX.Element {
 
     // const imageNumber = Math.round(Math.random()) + 1
@@ -43,6 +49,24 @@ function Home(): JSX.Element {
         }
     }, [])
 
+    // useEffect reactiveness according to 2nd argument
+    // [] - effect will run only on 1st render
+    // none - effect will run on 1st render and any re-render
+    // [anyStateVar, antherStateVar] - reactive to changes in specific state vars
+
+    const [ currentAnimals , setCurrentAnimals] = useState<string[]>([])
+    const [ animalIndex, setAnimalIndex ] = useState<number>(0) 
+    function displayDogs() {
+        setAnimalIndex(0)
+    }
+
+    function displayCats() {
+        setAnimalIndex(1)
+    }
+
+    useEffect(() => {
+        setCurrentAnimals(animals[animalIndex]) 
+    }, [animalIndex])
 
     return (
         <div className='Home'>
@@ -66,13 +90,16 @@ function Home(): JSX.Element {
             <p>sale</p>
             <p>{saleInfo}</p>
 
-            <br/>
-
-            <input/>
 
             <br/>
 
             <p>{currentTime}</p>
+
+            <br/>
+            <button onClick={displayDogs}>display dogs</button>
+            <button onClick={displayCats}>display cats</button>
+            <p>animals are:</p>
+            { currentAnimals.map(currentAnimal => <span key={currentAnimal}>{currentAnimal} | </span>) }
         </div>
     )
 }
