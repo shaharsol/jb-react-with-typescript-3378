@@ -4,6 +4,7 @@ import './ProductsList.css'
 import productsService from '../../../services/products'
 import Product from '../../../models/Product'
 import ProductCard from '../card/ProductCard'
+import Spinner from '../../common/spinner/Spinner'
 
 function ProductsList(): JSX.Element {
 
@@ -51,7 +52,9 @@ function ProductsList(): JSX.Element {
                     </tr>)}
                 </tbody>
             </table> */}
-            {products.map(p => <ProductCard key={p.id} product={p}/>)}
+            {products.length === 0 && <Spinner />}
+
+            {products.length > 0 && products.map(p => <ProductCard key={p.id} product={p}/>)}
         </div>
     )
 }
