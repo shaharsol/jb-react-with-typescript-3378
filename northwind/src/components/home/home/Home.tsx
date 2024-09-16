@@ -2,6 +2,7 @@ import './Home.css'
 import products1Source from '../../../assets/images/products1.jpeg'
 import products2Source from '../../../assets/images/products2.jpeg'
 import { useEffect, useState } from 'react'
+import useTitle from '../../../util/useTitle'
 
 const animals = [
     ['doberman', 'malinua', 'pitbull'], // dogs
@@ -10,6 +11,8 @@ const animals = [
 
 
 function Home(): JSX.Element {
+
+    useTitle('Home')
 
     // const imageNumber = Math.round(Math.random()) + 1
     const [ imageNumber ] = useState<number>(Math.round(Math.random()) + 1)
@@ -100,6 +103,10 @@ function Home(): JSX.Element {
             <button onClick={displayCats}>display cats</button>
             <p>animals are:</p>
             { currentAnimals.map(currentAnimal => <span key={currentAnimal}>{currentAnimal} | </span>) }
+
+            <br/>
+
+            <p>{process.env.REACT_APP_REST_SERVER}</p>
         </div>
     )
 }
