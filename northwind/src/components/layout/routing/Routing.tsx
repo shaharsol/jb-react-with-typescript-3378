@@ -7,7 +7,7 @@ function Routing(): JSX.Element {
     return (
         <Routes>
             <Route path="/home" element={<Home />}/>
-            {/* this is bad for SEO (search engine optimizatin) <Route path="/" element={<Home />}/> */}
+            {/* this is bad for SEO (search engine optimizatin), do not put same component on different routes <Route path="/" element={<Home />}/> */}
             <Route path="/" element={<Navigate to="/home" />}/>
             <Route path="/about" element={<About />}/>
             <Route path="*" element={<Page404 />}/>
