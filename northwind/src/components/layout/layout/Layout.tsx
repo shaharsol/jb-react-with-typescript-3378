@@ -24,6 +24,7 @@ function Layout(): JSX.Element {
             <footer>
                 <Footer />
             </footer>
+            
         </div>
     )
 }

@@ -1,0 +1,11 @@
+.ProductCard {
+    display: inline-flex;
+    width: 300px;
+    border: 1px solid;
+    flex-direction: row;
+    height: 100px;
+}
+
+.ProductCard > div:nth-last-child() {
+    margin: auto;
+}
