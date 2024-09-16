@@ -1,11 +1,20 @@
 .ProductCard {
     display: inline-flex;
-    width: 300px;
+    width: 200px;
     border: 1px solid;
-    flex-direction: row;
-    height: 100px;
+    /* flex-direction: row; */
+    text-align: left;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px;
 }
 
-.ProductCard > div:nth-last-child() {
-    margin: auto;
+.ProductCard > div:last-child {
+    margin-left: auto;
+}
+
+.ProductCard img {
+    width: 50px;
+    vertical-align: middle;
 }

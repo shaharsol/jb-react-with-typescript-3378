@@ -3,6 +3,7 @@
     display: grid;
     grid-template-rows: 15% 80% 5%;
     grid-template-columns: repeat(6, 1fr);
+    box-sizing: border-box;
 }
 
 .Layout > header, .Layout > footer {

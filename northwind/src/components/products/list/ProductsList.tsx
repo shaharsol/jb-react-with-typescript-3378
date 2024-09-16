@@ -51,7 +51,7 @@ function ProductsList(): JSX.Element {
                     </tr>)}
                 </tbody>
             </table> */}
-            {products.map(p => <ProductCard key={p.id} product={p} />)}
+            {products.map(p => <ProductCard key={p.id} product={p}/>)}
         </div>
     )
 }
