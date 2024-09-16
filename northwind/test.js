@@ -1,4 +1,4 @@
-const myFunc =  () => {
+const myFunc = async () => {
     return 1
 }
 
