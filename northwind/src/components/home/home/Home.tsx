@@ -1,12 +1,10 @@
 import './Home.css'
 import products1Source from '../../../assets/images/products1.jpeg'
 import products2Source from '../../../assets/images/products2.jpeg'
-import { useState } from 'react'
-
-
+import { useEffect, useState } from 'react'
 
 function Home(): JSX.Element {
-    
+
     // const imageNumber = Math.round(Math.random()) + 1
     const [ imageNumber ] = useState<number>(Math.round(Math.random()) + 1)
 
@@ -19,6 +17,7 @@ function Home(): JSX.Element {
 
     const sale1Info = '20% on all drinks'
     const sale2Info = '15% on all desserts'
+
     const [ saleInfo, setSaleInfo ] = useState<string>(sale1Info)
 
     function displaySale1Info() {
@@ -30,6 +29,20 @@ function Home(): JSX.Element {
         console.log('in function displaySale2Info')
         setSaleInfo(sale2Info)
     }
+
+    const [currentTime, setCurrentTime] = useState<string>((new Date()).toLocaleTimeString())
+
+    useEffect(() => {
+        const intervalId = window.setInterval(() => {
+            console.log('updating time...')
+            setCurrentTime((new Date()).toLocaleTimeString())
+        }, 1000)
+
+        return () => {
+            clearInterval(intervalId)
+        }
+    }, [])
+
 
     return (
         <div className='Home'>
@@ -52,6 +65,14 @@ function Home(): JSX.Element {
             <button onClick={displaySale2Info}>Sale 2 Info</button>
             <p>sale</p>
             <p>{saleInfo}</p>
+
+            <br/>
+
+            <input/>
+
+            <br/>
+
+            <p>{currentTime}</p>
         </div>
     )
 }
