@@ -37,6 +37,17 @@ class Products {
         return product
     }
 
+    public async update(id: number, productDraft: ProductDraft): Promise<Product> {
+        const axiosConfig = {
+            headers: {
+                'Content-type': 'multipart/form-data'
+            }
+        }
+        const response = await axios.put<Product>(`${process.env.REACT_APP_REST_SERVER}/${config.productsPath}/${id}`, productDraft, axiosConfig);
+        const product = response.data
+        return product
+    }
+
 }
 
 const products = new Products();

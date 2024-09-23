@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from 'react-router-dom'
+import { NavLink, useNavigate, useParams } from 'react-router-dom'
 import './ProductDetails.css'
 import productsService from '../../../services/products'
 import { useEffect, useState } from 'react';
@@ -51,6 +51,8 @@ function ProductDetails(): JSX.Element {
                 <img src={product.imageUrl} alt={product.name}/>
                 <br/>
                 <button onClick={deleteMe}>Delete</button>
+                <br/>
+                <NavLink to={`/products/edit/${product.id}`}>Edit</NavLink>
             </div>}
         </div>
     )

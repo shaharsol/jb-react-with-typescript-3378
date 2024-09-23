@@ -29,3 +29,13 @@ function useState(initialValue) {
 
 const [ myVar, setMyVar ] = useState(2)
 
+const someBool = true;
+
+if (someBool) {
+    console.log('yes')
+} else {
+    console.log('no')
+}
+
+if (!someBool) return console.log('no')
+console.log('yes')
