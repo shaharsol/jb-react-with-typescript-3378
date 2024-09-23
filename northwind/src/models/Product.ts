@@ -1,6 +1,6 @@
-import ProductDraft from "./ProductDraft";
+import BaseProduct from "./BaseProduct";
 
-interface Product extends ProductDraft{
+interface Product extends BaseProduct{
     id: number;
     imageUrl: string;
 }

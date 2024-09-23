@@ -1,7 +1,8 @@
-interface ProductDraft {
-    name: string;
-    price: number;
-    stock: number;
+import BaseProduct from "./BaseProduct";
+
+interface ProductDraft extends BaseProduct {
+    image: File;
+    list: FileList
 }
 
 export default ProductDraft

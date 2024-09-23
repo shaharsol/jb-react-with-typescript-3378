@@ -16,3 +16,16 @@ create table users {
     id UUID not null default UUID()
 }
 */
+
+function useState(initialValue) {
+    const variable = initialValue;
+
+    const setVariable = (newValue) => {
+        variable = newValue;
+    }
+    
+    return [variable, setVariable]
+}
+
+const [ myVar, setMyVar ] = useState(2)
+
