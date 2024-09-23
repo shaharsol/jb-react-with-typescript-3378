@@ -5,6 +5,7 @@ import productsService from '../../../services/products'
 import Product from '../../../models/Product'
 import ProductCard from '../card/ProductCard'
 import Spinner from '../../common/spinner/Spinner'
+import { NavLink } from 'react-router-dom'
 
 function ProductsList(): JSX.Element {
 
@@ -66,7 +67,11 @@ function ProductsList(): JSX.Element {
             </table> */}
             {products.length === 0 && <Spinner />}
 
-            {products.length > 0 && products.map(p => <ProductCard key={p.id} product={p} deleteMe={deleteProduct} />)}
+            {products.length > 0 && <div>
+                <NavLink to="/products/add">Add Product</NavLink>
+                <br/>
+                {products.map(p => <ProductCard key={p.id} product={p} deleteMe={deleteProduct} />)}
+            </div>}
         </div>
     )
 }

@@ -107,6 +107,8 @@ function Home(): JSX.Element {
             <br/>
 
             <p>{process.env.REACT_APP_REST_SERVER}</p>
+
+            <input />
         </div>
     )
 }
