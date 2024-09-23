@@ -15,19 +15,19 @@ function ProductsList(): JSX.Element {
     useEffect(() => {
         // how to overcome the fact that we can't use async functions inside useEffect
         // 1st solution, use an IIFE (immediately invoked function expression)
-        (async () => {
-            try {
-                const productsFromServer = await productsService.getAll()
-                setProducts(productsFromServer)
-            } catch (e) {
-                console.error(e)
-            }
-        })()
+        // (async () => {
+        //     try {
+        //         const productsFromServer = await productsService.getAll()
+        //         setProducts(productsFromServer)
+        //     } catch (e) {
+        //         console.error(e)
+        //     }
+        // })()
 
         // 2nd solution, use thenification
-        // productsService.getAll()
-        //     .then((products) => {console.log(products)})
-        //     .catch()
+        productsService.getAll()
+            .then(setProducts)
+            .catch(console.error)
 
     }, [])
 

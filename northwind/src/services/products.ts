@@ -12,6 +12,12 @@ class Products {
         return products
 
     }
+
+    public async getOne(id: number): Promise<Product> {
+        const response = await axios<Product>(`${process.env.REACT_APP_REST_SERVER}/${config.productsPath}/${id}`);
+        const product = response.data
+        return product
+    }
 }
 
 const products = new Products();

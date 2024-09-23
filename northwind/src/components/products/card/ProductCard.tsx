@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import Product from '../../../models/Product'
 import './ProductCard.css'
 
@@ -17,7 +18,7 @@ function ProductCard(props: ProductCardProps): JSX.Element {
                 <br/>
             </div>
             <div>
-                <img src={props.product.imageUrl} alt={props.product.name}/>
+                <NavLink to={`/products/${props.product.id}`}><img src={props.product.imageUrl} alt={props.product.name}/></NavLink>
             </div>
         </div>
     )
