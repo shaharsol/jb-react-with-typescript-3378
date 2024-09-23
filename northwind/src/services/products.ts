@@ -18,6 +18,12 @@ class Products {
         const product = response.data
         return product
     }
+
+    public async delete(id: number): Promise<boolean> {
+        const response = await axios.delete<boolean>(`${process.env.REACT_APP_REST_SERVER}/${config.productsPath}/${id}`);
+        const isDeleted = response.data
+        return isDeleted
+    }
 }
 
 const products = new Products();
