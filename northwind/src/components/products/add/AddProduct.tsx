@@ -5,6 +5,7 @@ import productsService from '../../../services/products'
 import { useNavigate } from 'react-router-dom';
 import ProductDraft from '../../../models/ProductDraft';
 import { FormEvent, useState } from 'react';
+import notify from '../../../util/notify';
 
 function AddProduct(): JSX.Element {
 
@@ -24,7 +25,8 @@ function AddProduct(): JSX.Element {
             alert(`new product added with id ${product.id}`)
             navigate('/products')
         } catch (e) {
-            alert(e)
+            notify.error(e)
+            // alert(e)
         }
 
     }

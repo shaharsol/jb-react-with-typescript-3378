@@ -13,6 +13,7 @@
     "@types/react-dom": "^18.3.0",
     "@types/react-router-dom": "^5.3.3",
     "axios": "^1.7.7",
+    "notyf": "^3.10.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.53.0",
@@ -45,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/notyf": "^3.0.0"
   }
 }

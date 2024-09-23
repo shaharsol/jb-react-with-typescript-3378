@@ -6,6 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import ProductDraft from '../../../models/ProductDraft';
 import { FormEvent, useEffect, useState } from 'react';
 import Spinner from '../../common/spinner/Spinner';
+import notify from '../../../util/notify';
 
 function EditProduct(): JSX.Element {
 
@@ -40,7 +41,8 @@ function EditProduct(): JSX.Element {
             productDraft.image = productDraft.list[0]
             try {
                 const product = await productsService.update(+id, productDraft)
-                alert(`product with id ${product.id} had been updated`)
+                // alert(`product with id ${product.id} had been updated`)
+                notify.success(`product with id ${product.id} had been updated`)
                 navigate(`/products/${id}`)
             } catch (e) {
                 alert(e)
