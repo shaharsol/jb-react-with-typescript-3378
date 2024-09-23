@@ -9,7 +9,7 @@ import notify from '../../../util/notify';
 
 function AddProduct(): JSX.Element {
 
-    const { register, handleSubmit } = useForm<ProductDraft>();
+    const { register, handleSubmit, formState } = useForm<ProductDraft>();
     const navigate = useNavigate()
 
     const [ previewImageSrc, setPreviewImageSrc ] = useState<string>('')
@@ -44,7 +44,18 @@ function AddProduct(): JSX.Element {
             <h3>Add Product</h3>
             <form action='/products/' onSubmit={handleSubmit(addProduct)}>
                 <label>name:</label>
-                <input type="text" {...register('name')}/>
+                <input type="text" {...register('name', {
+                    required: {
+                        value: true,
+                        message: 'Name must not be blank'
+                    },
+                    minLength: {
+                        value: 2,
+                        message: 'Name must be longer than 2 chars'
+                    }
+                })}/>
+                <br/>
+                <span className="error">{formState.errors.name?.message}</span>
                 <br/>
                 <label>price:</label>
                 <input type="number" {...register('price')}/>
