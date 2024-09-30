@@ -2,15 +2,27 @@ import { useEffect, useState } from 'react'
 import './ProductsStats.css'
 import Product from '../../../models/Product'
 import productsService from '../../../services/products'
+import notify from '../../../util/notify'
+import { useAppDispatch, useAppSelector } from '../../../redux/hooks'
+import { init } from '../../../redux/product-slice'
 
 function ProductStats(): JSX.Element {
 
-    const [ products, setProducts ] = useState<Product[]>([])
+    const products = useAppSelector((state) => state.products.products)
 
+    const dispatch = useAppDispatch()
+    
     useEffect(() => {
-        productsService.getAll()
-            .then(setProducts)
-            .catch(console.error)
+
+        (async () => {
+            try {
+                const products = await productsService.getAll();
+                dispatch(init(products))
+
+            } catch (e) {
+                notify.error(e)
+            }
+        })()
 
     }, [])
 

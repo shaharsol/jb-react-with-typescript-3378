@@ -6,11 +6,16 @@ import { useNavigate } from 'react-router-dom';
 import ProductDraft from '../../../models/ProductDraft';
 import { FormEvent, useState } from 'react';
 import notify from '../../../util/notify';
+import { add } from '../../../redux/product-slice';
+import { useDispatch } from 'react-redux';
+
 
 function AddProductQuick(): JSX.Element {
 
     const { register, handleSubmit, formState } = useForm<ProductDraft>();
     const navigate = useNavigate()
+
+    const dispatch = useDispatch()
 
     const [ previewImageSrc, setPreviewImageSrc ] = useState<string>('')
 
@@ -23,7 +28,8 @@ function AddProductQuick(): JSX.Element {
         try {
             const product = await productsService.add(productDraft)
             alert(`new product added with id ${product.id}`)
-            navigate('/products')
+            // navigate('/products')
+            dispatch(add(product))
         } catch (e) {
             notify.error(e)
             // alert(e)
