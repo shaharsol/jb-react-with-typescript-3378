@@ -33,4 +33,3 @@ export const productSlice = createSlice({
 export const { init, add, update, remove } = productSlice.actions
 
 export default productSlice.reducer
-

@@ -1,3 +1,4 @@
+import AuthBox from '../../auth/auth-box/AuthBox';
 import Home from '../../home/home/Home';
 import AddProductQuick from '../../products/add-quick/AddProductQuick';
 import Footer from '../footer/Footer';
