@@ -13,6 +13,7 @@
 .Layout > main {
     grid-column: span 5;
     overflow: auto;
+    display: inline-flex;
 }
 
 .Layout, .Layout > * {

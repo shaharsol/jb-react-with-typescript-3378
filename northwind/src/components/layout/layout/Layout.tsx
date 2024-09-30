@@ -1,4 +1,5 @@
 import Home from '../../home/home/Home';
+import AddProductQuick from '../../products/add-quick/AddProductQuick';
 import Footer from '../footer/Footer';
 import Header from '../header/Header';
 import Menu from '../menu/Menu';
@@ -6,7 +7,6 @@ import Routing from '../routing/Routing';
 import './Layout.css'
 
 function Layout(): JSX.Element {
-    
     return (
         <div className='Layout'>
             <header>
@@ -18,7 +18,12 @@ function Layout(): JSX.Element {
             </nav>
 
             <main>
-                <Routing />
+                <div>
+                    <Routing />
+                </div>
+                <div>
+                    <AddProductQuick />
+                </div>
             </main>
 
             <footer>
