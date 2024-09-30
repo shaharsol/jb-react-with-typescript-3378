@@ -7,7 +7,7 @@ import ProductCard from '../card/ProductCard'
 import Spinner from '../../common/spinner/Spinner'
 import { NavLink } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../../redux/hooks'
-import { init } from '../../../redux/product-slice'
+import { init, remove } from '../../../redux/product-slice'
 import notify from '../../../util/notify'
 
 function ProductsList(): JSX.Element {
@@ -58,10 +58,11 @@ function ProductsList(): JSX.Element {
         if (window.confirm(`sure to delete product ${id}?`)) {
             const isDeleted = await productsService.delete(id)
             alert(`product ${id} has been deleted`)
+            dispatch(remove({id}))
             // update the state
-            const newProducts = [...products]
-            const index = newProducts.findIndex(p => p.id === id)
-            newProducts.splice(index, 1)
+            // const newProducts = [...products]
+            // const index = newProducts.findIndex(p => p.id === id)
+            // newProducts.splice(index, 1)
             // setProducts(newProducts)
         }
     }

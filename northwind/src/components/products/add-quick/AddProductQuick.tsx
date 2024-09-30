@@ -7,7 +7,7 @@ import ProductDraft from '../../../models/ProductDraft';
 import { FormEvent, useState } from 'react';
 import notify from '../../../util/notify';
 import { add } from '../../../redux/product-slice';
-import { useDispatch } from 'react-redux';
+import { useAppDispatch } from '../../../redux/hooks';
 
 
 function AddProductQuick(): JSX.Element {
@@ -15,7 +15,7 @@ function AddProductQuick(): JSX.Element {
     const { register, handleSubmit, formState } = useForm<ProductDraft>();
     const navigate = useNavigate()
 
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
 
     const [ previewImageSrc, setPreviewImageSrc ] = useState<string>('')
 
