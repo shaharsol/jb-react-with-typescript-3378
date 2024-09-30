@@ -6,6 +6,7 @@ import ProductsList from "../../products/list/ProductsList"
 import ProductDetails from "../../products/details/ProductDetails"
 import AddProduct from "../../products/add/AddProduct"
 import EditProduct from "../../products/edit/EditProduct"
+import Search from "../../products/search/Search"
 
 function Routing(): JSX.Element {
     return (
@@ -16,6 +17,7 @@ function Routing(): JSX.Element {
             <Route path="/about" element={<About />}/>
             {/* route params: any path element that starts with :*/}
             {/* I will later have access to it in the mounted component*/}
+            <Route path="/products/search" element={<Search />}/>
             <Route path="/products/add" element={<AddProduct />}/>
             <Route path="/products/edit/:id" element={<EditProduct />}/>
             <Route path="/products/:id" element={<ProductDetails />}/>
