@@ -13,6 +13,7 @@ function Menu(): JSX.Element {
             <NavLink to="/home">home</NavLink>
             <NavLink to="/categories">categories</NavLink>
             <NavLink to="/products">products</NavLink>
+            <NavLink to="/products/live">live</NavLink>
             <NavLink to="/products/search">search</NavLink>
             <a href="#">employees</a>
             {/* don't use!!! <a href="/about">about us</a> */}

@@ -19,6 +19,9 @@ export const productSlice = createSlice({
         add: (state, action: PayloadAction<Product>) => {
             state.products.push(action.payload)
         },
+        topAdd: (state, action: PayloadAction<Product>) => {
+            state.products = [ action.payload, ...state.products ]
+        },
         update: (state, action: PayloadAction<Product>) => {
             const index = state.products.findIndex(p => p.id === action.payload.id)
             state.products[index] = action.payload
@@ -30,6 +33,6 @@ export const productSlice = createSlice({
     }
 })
 
-export const { init, add, update, remove } = productSlice.actions
+export const { init, add, update, remove, topAdd } = productSlice.actions
 
 export default productSlice.reducer
