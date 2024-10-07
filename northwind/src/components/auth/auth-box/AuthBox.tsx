@@ -8,12 +8,12 @@ import User from '../../../models/User'
 function AuthBox(): JSX.Element {
 
     // const [jwt, setJwt] = useState<string>('')
-    const { jwt } = useContext(AuthContext)
+    const { jwt, setJwt } = useContext(AuthContext)
 
     const [ stam, setStam ] = useState<{id: string}>({id: '123456'})
 
     function logout() {
-
+        setJwt('')
     }
 
     // we use useMemo when we do CPU/memory intensive calcs, and we want to cache
