@@ -10,6 +10,8 @@ import Search from "../../products/search/Search"
 import Login from "../../auth/login/Login"
 import CategoryList from "../../categories/list/CategoryList"
 import ProductsListLive from "../../products/live/ProductsList"
+import ProductsListUseCallback from "../../products/use-callback/ProductsListUseCallback"
+import Defer from "../../products/defer/Defer"
 
 function Routing(): JSX.Element {
     return (
@@ -26,6 +28,8 @@ function Routing(): JSX.Element {
             <Route path="/products/:id" element={<ProductDetails />}/>
             <Route path="/products" element={<ProductsList />}/>
             <Route path="/products/live" element={<ProductsListLive />}/>
+            <Route path="/products/callback" element={<ProductsListUseCallback />}/>
+            <Route path="/products/defer" element={<Defer />}/>
             <Route path="/categories" element={<CategoryList />}/>
             <Route path="/login" element={<Login />}/>
             <Route path="*" element={<Page404 />}/>

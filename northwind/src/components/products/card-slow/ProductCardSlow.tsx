@@ -3,6 +3,7 @@ import Product from '../../../models/Product'
 import './ProductCardSlow.css'
 import productsService from '../../../services/products'
 import sleep from '../../../util/sleep'
+import { memo } from 'react'
 
 interface ProductCardSlowProps {
     product: Product,
@@ -22,7 +23,7 @@ function ProductCardSlow(props: ProductCardSlowProps): JSX.Element {
     //     .catch()
     // console.log(Date.now())
     const startTime = performance.now()
-    while (performance.now() - startTime < 100) {
+    while (performance.now() - startTime < 10) {
         // do nothing
     }
 

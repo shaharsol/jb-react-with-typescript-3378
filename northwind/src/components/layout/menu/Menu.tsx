@@ -14,6 +14,8 @@ function Menu(): JSX.Element {
             <NavLink to="/categories">categories</NavLink>
             <NavLink to="/products">products</NavLink>
             <NavLink to="/products/live">live</NavLink>
+            <NavLink to="/products/callback">use callback</NavLink>
+            <NavLink to="/products/defer">defer</NavLink>
             <NavLink to="/products/search">search</NavLink>
             <a href="#">employees</a>
             {/* don't use!!! <a href="/about">about us</a> */}
