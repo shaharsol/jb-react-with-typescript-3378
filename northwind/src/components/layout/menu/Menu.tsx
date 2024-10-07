@@ -11,6 +11,7 @@ function Menu(): JSX.Element {
             </div>
             {/* don't use!!! <a href="/home">home</a> */}
             <NavLink to="/home">home</NavLink>
+            <NavLink to="/categories">categories</NavLink>
             <NavLink to="/products">products</NavLink>
             <NavLink to="/products/search">search</NavLink>
             <a href="#">employees</a>
